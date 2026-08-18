@@ -1,6 +1,10 @@
-from utils import square, is_even, celsius_to_fahrenheit
+from utils import square, is_even, celsius_to_fahrenheit, greet
 
-# Get input from user
+# Get user's name
+name = input("Enter your name: ")
+print(greet(name))
+
+# Get a number from user
 num = float(input("Enter a number: "))
 
 # Calculate results
