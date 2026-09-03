@@ -1,0 +1,13 @@
+### Reflection: Setting Up My Database Workbench
+
+**1. Which database felt easiest for storing the student record, and why?**
+
+MongoDB felt the easiest because I could insert the data directly without creating a table or defining a schema first. I just typed `db.students.insertOne()` and the data was stored. PostgreSQL required me to create a database and table first, which took more steps. Redis was simple but limited to key-value pairs.
+
+**2. Where did you define structure upfront?**
+
+In PostgreSQL, I had to define the structure upfront. I created a `CREATE TABLE` statement with columns like `id`, `name`, and `level`, including their data types. This means PostgreSQL enforces a fixed schema before data can be inserted.
+
+**3. Where could you insert data without predefined structure?**
+
+I could insert data in MongoDB without any predefined structure. Using `db.students.insertOne()`, I added a document with fields like `name`, `level`, and `interests`. I could also add new fields at any time without changing a schema. Redis also had no structure, but it only stores simple key-value pairs.
