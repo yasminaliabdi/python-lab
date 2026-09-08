@@ -10,31 +10,113 @@
 
     <!-- Part 1: Page Header -->
     <header>
-        <h1>My Budget Tracker</h1>
+        <h1>
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Budget Tracker Logo" width="40">
+            My Budget Tracker
+        </h1>
         <p>Track your income and expenses in one place.</p>
     </header>
+
+    <!-- Step 4: Interactive Element - How to Use -->
+    <section id="how-to-use">
+        <details>
+            <summary>📖 How to use this tracker</summary>
+            <p>1. Enter the expense name in the "Expense Name" field.</p>
+            <p>2. Enter the amount you spent in the "Amount" field.</p>
+            <p>3. Select a category from the dropdown menu.</p>
+            <p>4. Click the "Add Expense" button to add it to your list.</p>
+            <p>5. Your expenses will appear in the table below.</p>
+        </details>
+    </section>
 
     <!-- Part 2: Add Expense Section -->
     <section id="add-expense">
         <h2>Add Expense</h2>
-        <div>
-            <label for="expense-name">Expense Name:</label>
-            <input type="text" id="expense-name" placeholder="e.g., Groceries">
-        </div>
-        <div>
-            <label for="expense-amount">Amount:</label>
-            <input type="text" id="expense-amount" placeholder="e.g., 500">
-        </div>
-        <div>
-            <label for="expense-category">Category:</label>
-            <input type="text" id="expense-category" placeholder="e.g., Food">
-        </div>
+        <form>
+            <div>
+                <label for="expense-name">Expense Name:</label>
+                <input type="text" id="expense-name" placeholder="e.g., Groceries">
+            </div>
+            <div>
+                <label for="expense-amount">Amount:</label>
+                <input type="number" id="expense-amount" placeholder="e.g., 500">
+            </div>
+            <div>
+                <label for="expense-category">Category:</label>
+                <select id="expense-category">
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div>
+                <button type="button">Add Expense</button>
+            </div>
+        </form>
     </section>
 
     <!-- Part 3: Your Expenses Placeholder -->
     <section id="expenses-placeholder">
         <h2>Your Expenses</h2>
-        <p>No expenses yet.</p>
+        <!-- Expense Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Groceries</td>
+                    <td>5,000</td>
+                    <td>Food</td>
+                    <td>2026-09-01</td>
+                </tr>
+                <tr>
+                    <td>Transport</td>
+                    <td>1,200</td>
+                    <td>Transport</td>
+                    <td>2026-09-02</td>
+                </tr>
+                <tr>
+                    <td>Rent</td>
+                    <td>25,000</td>
+                    <td>Rent</td>
+                    <td>2026-09-01</td>
+                </tr>
+                <tr>
+                    <td>Dinner</td>
+                    <td>3,500</td>
+                    <td>Entertainment</td>
+                    <td>2026-09-03</td>
+                </tr>
+                <tr>
+                    <td>Internet Bill</td>
+                    <td>2,000</td>
+                    <td>Other</td>
+                    <td>2026-09-04</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Part 4: Multimedia Content -->
+    <section id="multimedia">
+        <h2>Budgeting Tip</h2>
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/9XkKSjTt--Q"
+            title="Budgeting Tips for Beginners"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
     </section>
 
 </body>

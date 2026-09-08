@@ -1,4 +1,5 @@
-/* Element Selector */
+/* ====== ELEMENT SELECTORS ====== */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -14,7 +15,15 @@ header {
     border-radius: 8px;
 }
 
-/* ID Selector */
+header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ====== ID SELECTORS ====== */
+
 #add-expense {
     background-color: #ecf0f1;
     padding: 20px;
@@ -29,4 +38,132 @@ header {
     margin-top: 20px;
     border-radius: 8px;
     border-left: 5px solid #3498db;
+}
+
+/* ====== STEP 1: TABLE STYLING ====== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Alternating row colors */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect for table rows */
+tr:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+/* ====== STEP 2: FORM STYLING ====== */
+
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #27ae60;
+    background-color: #f0fff0;
+}
+
+button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #1e8449;
+}
+
+/* ====== STEP 3: MULTIMEDIA ====== */
+
+#multimedia {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#multimedia iframe {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* ====== STEP 4: INTERACTIVE ELEMENT ====== */
+
+#how-to-use {
+    background-color: #fff3cd;
+    padding: 15px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #ffc107;
+}
+
+#how-to-use summary {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #2c3e50;
+}
+
+#how-to-use p {
+    margin: 8px 0;
+    color: #333;
+}
+
+/* ====== ADVANCED CSS SELECTORS ====== */
+
+/* Descendant selector - styles all td inside expenses section */
+#expenses-placeholder td {
+    font-size: 15px;
+}
+
+/* Direct child selector - styles direct div children of form */
+form > div {
+    margin-bottom: 12px;
+}
+
+/* Negation pseudo-class - styles all inputs except submit type */
+input:not([type="submit"]) {
+    border: 1px solid #aaa;
+}
+
+/* First child selector */
+tr:first-child {
+    font-weight: bold;
 }
