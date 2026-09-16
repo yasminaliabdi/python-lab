@@ -1,169 +1,248 @@
-/* ====== ELEMENT SELECTORS ====== */
+/* ====== COLOR PALETTE & GLOBAL STYLES ====== */
+
+:root {
+    --navy: #1e293b;
+    --teal: #0d9488;
+    --teal-dark: #0f766e;
+    --light-bg: #f8fafc;
+    --white: #ffffff;
+    --text-dark: #334155;
+    --border-light: #e2e8f0;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
     margin: 0;
-    padding: 20px;
+    padding: 30px 20px;
+    line-height: 1.6;
 }
 
-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
+/* ====== TYPOGRAPHY ====== */
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--navy);
 }
 
-header h1 {
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
 }
 
-/* ====== ID SELECTORS ====== */
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-light);
+}
+
+/* ====== HEADER CARD ====== */
+
+header {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    color: var(--white);
+}
+
+header p {
+    color: #cbd5e1;
+    margin: 10px 0 0 0;
+    font-size: 1.1rem;
+}
+
+/* ====== HOW TO USE CARD ====== */
+
+#how-to-use {
+    background-color: #fef3c7;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border-left: 5px solid #f59e0b;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+}
+
+#how-to-use summary {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--navy);
+    padding: 5px 0;
+}
+
+#how-to-use p {
+    margin: 8px 0;
+    color: var(--text-dark);
+}
+
+/* ====== ADD EXPENSE CARD ====== */
 
 #add-expense {
-    background-color: #ecf0f1;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    border-left: 5px solid #27ae60;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-light);
 }
+
+form > div {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.95rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+button {
+    background-color: var(--teal);
+    color: var(--white);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: var(--teal-dark);
+    transform: translateY(-1px);
+}
+
+/* ====== EXPENSES TABLE CARD ====== */
 
 #expenses-placeholder {
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    border-left: 5px solid #3498db;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-light);
 }
-
-/* ====== STEP 1: TABLE STYLING ====== */
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
+    padding: 14px 16px;
     text-align: left;
+    border-bottom: 1px solid var(--border-light);
 }
 
 thead {
-    background-color: #2c3e50;
-    color: white;
+    background-color: var(--navy);
 }
 
-/* Alternating row colors */
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+th {
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* Hover effect for table rows */
-tr:hover {
-    background-color: #e0e0e0;
+tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+tbody tr:hover {
+    background-color: #e2e8f0;
     cursor: pointer;
 }
 
-/* ====== STEP 2: FORM STYLING ====== */
-
-form div {
-    margin-bottom: 10px;
+td {
+    font-size: 0.95rem;
 }
 
-label {
-    display: inline-block;
-    width: 120px;
-    font-weight: bold;
-}
-
-input, select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 200px;
-}
-
-input:focus, select:focus {
-    outline: 2px solid #27ae60;
-    background-color: #f0fff0;
-}
-
-button {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #1e8449;
-}
-
-/* ====== STEP 3: MULTIMEDIA ====== */
+/* ====== MULTIMEDIA CARD ====== */
 
 #multimedia {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-light);
     text-align: center;
 }
 
 #multimedia iframe {
     max-width: 100%;
-    border-radius: 8px;
-}
-
-/* ====== STEP 4: INTERACTIVE ELEMENT ====== */
-
-#how-to-use {
-    background-color: #fff3cd;
-    padding: 15px 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    border-left: 5px solid #ffc107;
-}
-
-#how-to-use summary {
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #2c3e50;
-}
-
-#how-to-use p {
-    margin: 8px 0;
-    color: #333;
+    border-radius: 12px;
+    margin-top: 10px;
 }
 
 /* ====== ADVANCED CSS SELECTORS ====== */
 
-/* Descendant selector - styles all td inside expenses section */
+/* Descendant selector */
 #expenses-placeholder td {
-    font-size: 15px;
+    color: var(--text-dark);
 }
 
-/* Direct child selector - styles direct div children of form */
+/* Direct child selector */
 form > div {
-    margin-bottom: 12px;
+    margin-bottom: 18px;
 }
 
-/* Negation pseudo-class - styles all inputs except submit type */
+/* Negation pseudo-class */
 input:not([type="submit"]) {
-    border: 1px solid #aaa;
+    background-color: var(--white);
 }
 
 /* First child selector */
 tr:first-child {
-    font-weight: bold;
+    font-weight: 600;
 }
